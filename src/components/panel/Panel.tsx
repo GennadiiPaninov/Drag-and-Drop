@@ -1,4 +1,5 @@
 import {ChangeEvent, useState} from "react";
+import {Button} from "../button/Button";
 
 type PanelProps = {
     addNameCallback: (name: string) => void
@@ -15,9 +16,9 @@ export const Panel = ({addNameCallback}:PanelProps) => {
         }
     }
     return (
-        <div>
+        <>
             <input type="text" onChange={handleChangeText} value={text}/>
-            <button onClick={addNameHandler}>send</button>
-        </div>
+            <Button onClick={addNameHandler}>send</Button>
+        </>
     );
 };

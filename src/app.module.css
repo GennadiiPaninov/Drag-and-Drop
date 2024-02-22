@@ -1,20 +1,24 @@
-.wrapper{
-    margin-left: 400px;
+.wrapper {
+    width: 80%;
+    height: 100vh;
+    margin:0 auto;
+    padding: 10px 0;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: row;
-    width: 1000px;
-    align-items: center;
-    justify-content: space-around;
-    border: 2px chocolate double;
 
 }
 .users{
     width: 50%;
-    border: 2px green double;
+    border-right: 1px black solid;
+}
+.nameDropZone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 .mentors{
     width: 50%;
-    border: 2px green double;
 }
 .panelContainer{
     width: 100%;
