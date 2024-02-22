@@ -1,40 +1,31 @@
 import s from './app.module.css'
-import {ChangeEvent,  useState} from "react";
+
 import { useDispatch , useSelector } from "react-redux";
 import {addMentorItem, addUserItem} from "./feature/DraggebleItem/model/draggeble.reducer";
 import DropZone from "./feature/DraggebleItem/ui/dropZone/DropZone";
 import {selectItems} from "./feature/DraggebleItem/model/selectors";
 import DraggableItem from "./feature/DraggebleItem/ui/draggableItem/DraggableItem";
+import {Panel} from "./components/panel/Panel";
 function App() {
     const tacks = useSelector(selectItems);
     const dispatch = useDispatch()
-    const [userText, setUserText] = useState<string>('')
-    const [mentorsText, setMentorsText] = useState<string>('')
-    const addUserTackCallback =()=>{
-        if(userText.length > 1){
-            dispatch(addUserItem({data:userText}))
-            setUserText('')
+    const addUserTackCallback =(name: string)=>{
+        if(name.length > 1){
+            dispatch(addUserItem({data:name}))
         }
+    }
+    const addMentorTackCallback =(name: string)=>{
+        if(name.length > 1){
+            dispatch(addMentorItem({data:name}))
+        }
+    }
 
-    }
-    const addMentorTackCallback =()=>{
-        dispatch(addMentorItem({data:mentorsText}))
-        setMentorsText('')
-    }
-    const handleChangeUserText =(e: ChangeEvent<HTMLInputElement>)=>{
-
-        setUserText(e.currentTarget.value)
-    }
-    const handleChangeMentorText =(e: ChangeEvent<HTMLInputElement>)=>{
-        setMentorsText(e.currentTarget.value)
-    }
     return (
         <div className={s.wrapper}>
             <div className={s.users}>
                 <h1>USERS</h1>
                 <div className={s.panelContainer}>
-                    <input type="text" onChange={handleChangeUserText} value={userText}/>
-                    <button onClick={addUserTackCallback}>send</button>
+                    <Panel addNameCallback={addUserTackCallback}/>
                 </div>
 
                 <DropZone dropZoneName={'userZone'}>
@@ -47,8 +38,7 @@ function App() {
             <div className={s.mentors}>
                 <h1>Mentors</h1>
                 <div className={s.panelContainer}>
-                    <input type="text" onChange={handleChangeMentorText} value={mentorsText}/>
-                    <button onClick={addMentorTackCallback}>send</button>
+                    <Panel addNameCallback={addMentorTackCallback}/>
                 </div>
                 <DropZone dropZoneName={'mentorZone'}>
                     {tacks.mentorItem && tacks.mentorItem.map((el)=>{
