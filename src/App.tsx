@@ -31,7 +31,7 @@ function App() {
     return (
         <div className={s.wrapper}>
             <div className={s.users}>
-                <h1>USER</h1>
+                <h1>USERS</h1>
                 <div className={s.panelContainer}>
                     <input type="text" onChange={handleChangeUserText} value={userText}/>
                     <button onClick={addUserTackCallback}>send</button>
@@ -39,7 +39,7 @@ function App() {
 
                 <DropZone dropZoneName={'userZone'}>
                     {tacks.userItem && tacks.userItem.map((el)=>{
-                        return <DraggableItem id={el.id} text={el.value} />
+                        return <DraggableItem id={el.id} text={el.value} description={"User"}/>
                     })
                     }
                 </DropZone>
@@ -52,7 +52,7 @@ function App() {
                 </div>
                 <DropZone dropZoneName={'mentorZone'}>
                     {tacks.mentorItem && tacks.mentorItem.map((el)=>{
-                        return <DraggableItem id={el.id} text={el.value} />
+                        return <DraggableItem id={el.id} text={el.value} description={"Mentor"}/>
                     })
                     }
                 </DropZone>

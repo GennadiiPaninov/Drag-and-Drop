@@ -4,8 +4,9 @@ import s from './DraggableItem.module.css'
 type draggableItemProps = {
     id: string
     text: string
+    description: string
 }
-const DraggableItem = ({ id, text }: draggableItemProps) => {
+const DraggableItem = ({ id, text, description }: draggableItemProps) => {
     const [isDragging, setIsDragging] = useState(false);
 
     const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
@@ -25,7 +26,7 @@ const DraggableItem = ({ id, text }: draggableItemProps) => {
             style={{ opacity: isDragging ? 0.5 : 1 }}
             className={s.container}
         >
-            {text}
+            {description}: {text}
         </div>
     );
 };

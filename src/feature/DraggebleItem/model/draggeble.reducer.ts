@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from 'uuid';
+import {capitalizeFirstLetter} from "../../../app/utils/capitalizeFirstLetter";
 
 type Item ={
     id: string;
@@ -21,14 +22,14 @@ const slice = createSlice({
         addUserItem: (state, action: PayloadAction<{ data:  string }>) => {
             const newItem = {
                 id: uuidv4() as string,
-                value: action.payload.data
+                value: capitalizeFirstLetter(action.payload.data)
             };
             state.userItem.push(newItem);
         },
         addMentorItem: (state, action: PayloadAction<{ data:  string }>) => {
             const newItem = {
                 id: uuidv4() as string,
-                value: action.payload.data
+                value: capitalizeFirstLetter(action.payload.data)
             };
             state.mentorItem.push(newItem);
         },
