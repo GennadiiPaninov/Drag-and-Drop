@@ -1,11 +1,12 @@
 import s from './app.module.css'
-
 import { useDispatch , useSelector } from "react-redux";
 import {addMentorItem, addUserItem} from "./feature/DraggebleItem/model/draggeble.reducer";
 import DropZone from "./feature/DraggebleItem/ui/dropZone/DropZone";
 import {selectItems} from "./feature/DraggebleItem/model/selectors";
 import DraggableItem from "./feature/DraggebleItem/ui/draggableItem/DraggableItem";
 import {Panel} from "./components/panel/Panel";
+import 'normalize.css';
+
 function App() {
     const tacks = useSelector(selectItems);
     const dispatch = useDispatch()
