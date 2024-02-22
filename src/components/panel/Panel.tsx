@@ -9,8 +9,10 @@ export const Panel = ({addNameCallback}:PanelProps) => {
         setText(e.currentTarget.value)
     }
     const addNameHandler=()=>{
+        if(text.length > 1){
         addNameCallback(text)
         setText('')
+        }
     }
     return (
         <div>

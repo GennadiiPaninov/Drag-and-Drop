@@ -10,16 +10,11 @@ function App() {
     const tacks = useSelector(selectItems);
     const dispatch = useDispatch()
     const addUserTackCallback =(name: string)=>{
-        if(name.length > 1){
             dispatch(addUserItem({data:name}))
-        }
     }
     const addMentorTackCallback =(name: string)=>{
-        if(name.length > 1){
             dispatch(addMentorItem({data:name}))
-        }
     }
-
     return (
         <div className={s.wrapper}>
             <div className={s.users}>
