@@ -20,9 +20,7 @@ function App() {
         <div className={s.wrapper}>
             <div className={s.users}>
                 <h1 className={s.nameDropZone}>USERS</h1>
-                <div className={s.panelContainer}>
-                    <Panel addNameCallback={addUserTackCallback}/>
-                </div>
+                    <Panel addNameCallback={addUserTackCallback} className={s.panelContainer}/>
                 <DropZone dropZoneName={'userZone'}>
                     {tacks.userItem && tacks.userItem.map((el)=>{
                         return <DraggableItem id={el.id} text={el.value} description={"User"}/>
@@ -32,9 +30,7 @@ function App() {
             </div>
             <div className={s.mentors}>
                 <h1 className={s.nameDropZone}>Mentors</h1>
-                <div className={s.panelContainer}>
-                    <Panel addNameCallback={addMentorTackCallback}/>
-                </div>
+                    <Panel addNameCallback={addMentorTackCallback} className={s.panelContainer}/>
                 <DropZone dropZoneName={'mentorZone'}>
                     {tacks.mentorItem && tacks.mentorItem.map((el)=>{
                         return <DraggableItem id={el.id} text={el.value} description={"Mentor"}/>

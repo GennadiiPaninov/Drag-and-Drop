@@ -3,8 +3,9 @@ import {Button} from "../button/Button";
 
 type PanelProps = {
     addNameCallback: (name: string) => void
+    className?:string
 }
-export const Panel = ({addNameCallback}:PanelProps) => {
+export const Panel = ({addNameCallback, className}:PanelProps) => {
     const [text, setText] = useState<string>('')
     const handleChangeText =(e: ChangeEvent<HTMLInputElement>)=>{
         setText(e.currentTarget.value)
@@ -16,9 +17,9 @@ export const Panel = ({addNameCallback}:PanelProps) => {
         }
     }
     return (
-        <>
+        <div className={className}>
             <input type="text" onChange={handleChangeText} value={text}/>
             <Button onClick={addNameHandler}>send</Button>
-        </>
+        </div>
     );
 };
