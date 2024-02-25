@@ -6,7 +6,7 @@ type draggableItemProps = {
     text: string
     description: string
 }
-const DraggableItem = ({ id, text, description }: draggableItemProps) => {
+export const DraggableItem = ({ id, text, description }: draggableItemProps) => {
     const [isDragging, setIsDragging] = useState(false);
 
     const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
@@ -17,6 +17,7 @@ const DraggableItem = ({ id, text, description }: draggableItemProps) => {
     const handleDragEnd = () => {
         setIsDragging(false);
     };
+
 
     return (
         <div
@@ -31,4 +32,3 @@ const DraggableItem = ({ id, text, description }: draggableItemProps) => {
     );
 };
 
-export default DraggableItem;

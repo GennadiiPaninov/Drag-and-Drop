@@ -34,7 +34,6 @@ const DropZone = ({ children, dropZoneName }: DropZoneType) => {
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
-
             className={dropZoneClass}
         >
             {children}
