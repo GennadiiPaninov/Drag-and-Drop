@@ -2,6 +2,7 @@ import React, {ReactNode, useState} from 'react';
 import s from './DropZone.module.css'
 import { useDispatch  } from "react-redux";
 import {dragItem} from "../../model/draggeble.reducer";
+import {clsx} from "clsx";
 type DropZoneType ={
     children?: ReactNode
     dropZoneName: string
@@ -27,14 +28,14 @@ const DropZone = ({ children, dropZoneName }: DropZoneType) => {
         const itemId = event.dataTransfer.getData('text/plain');
         dispatch(dragItem({ id:itemId, dropZoneName:dropZoneName }))
     };
-
+    const dropZoneClass = clsx(s.container, isOver && s.isOverDropZone)
     return (
         <div
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
-            style={{ backgroundColor: isOver ? 'yellow' : 'transparent' }}
-            className={s.container}
+
+            className={dropZoneClass}
         >
             {children}
         </div>
