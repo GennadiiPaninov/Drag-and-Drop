@@ -1,5 +1,6 @@
 import {ChangeEvent, useState} from "react";
 import {Button} from "../button/Button";
+import s from './Panel.module.css';
 
 type PanelProps = {
     addNameCallback: (name: string) => void
@@ -18,7 +19,7 @@ export const Panel = ({addNameCallback, className}:PanelProps) => {
     }
     return (
         <div className={className}>
-            <input type="text" onChange={handleChangeText} value={text}/>
+            <input type="text" onChange={handleChangeText} value={text} className={s.inputPanelStyle}/>
             <Button onClick={addNameHandler}>send</Button>
         </div>
     );

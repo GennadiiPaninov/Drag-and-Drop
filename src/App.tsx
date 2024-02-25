@@ -18,7 +18,7 @@ function App() {
     }
     return (
         <div className={s.wrapper}>
-            <div className={s.users}>
+            <div className={s.zonWrapper}>
                 <h1 className={s.nameDropZone}>USERS</h1>
                     <Panel addNameCallback={addUserTackCallback} className={s.panelContainer}/>
                 <DropZone dropZoneName={'userZone'}>
@@ -28,7 +28,7 @@ function App() {
                     }
                 </DropZone>
             </div>
-            <div className={s.mentors}>
+            <div className={s.zonWrapper}>
                 <h1 className={s.nameDropZone}>Mentors</h1>
                     <Panel addNameCallback={addMentorTackCallback} className={s.panelContainer}/>
                 <DropZone dropZoneName={'mentorZone'}>

@@ -1,25 +1,28 @@
 .wrapper {
     width: 80%;
-    height: 100vh;
+    min-height: 90vh;
     margin:0 auto;
     padding: 10px 0;
     box-sizing: border-box;
     display: flex;
 
 }
-.users{
+.zonWrapper{
     width: 50%;
-    border-right: 1px black solid;
+    border: 2px solid #bae8e8;
+    margin: 20px 40px 0 0;
+    border-radius: 20px;
+    box-shadow: 0 0 24px 4px rgba(186,232,232,1);
+    padding: 10px 40px;
 }
 .nameDropZone{
     display: flex;
     align-items: center;
     justify-content: center;
 
+
 }
-.mentors{
-    width: 50%;
-}
+
 .panelContainer{
     width: 100%;
     display: flex;
